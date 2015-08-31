@@ -14,5 +14,5 @@ Import the lucca-icons.min.css in your html page
 ```
 or import the main less/sass file in your less/sass file [recommended]
 ```less
-@import "bower_components/lucca-icons/src/lucca-ui";
+@import "bower_components/lucca-icons/src/lucca-icons";
 ```
