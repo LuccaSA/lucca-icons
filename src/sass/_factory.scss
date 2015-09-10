@@ -1,116 +1,37 @@
-// Awesome icon factory
-// =====
-$luccaIcons_pin: "\e000";
-$luccaIcons_plus: "\e001";
-$luccaIcons_analytics: "\e002";
-$luccaIcons_chevron-east: "\e003";
-$luccaIcons_chevron-north: "\e004";
-$luccaIcons_chevron-south: "\e005";
-$luccaIcons_chevron-west: "\e006";
-$luccaIcons_attachment: "\e007";
-$luccaIcons_blocks: "\e008";
-$luccaIcons_branch: "\e009";
-$luccaIcons_coffee: "\e00a";
-$luccaIcons_check: "\e00b";
-$luccaIcons_checkbox: "\e00c";
-$luccaIcons_checkbox-checked: "\e00d";
-$luccaIcons_clock: "\e00e";
-$luccaIcons_cross: "\e00f";
-$luccaIcons_calendar: "\e010";
-$luccaIcons_download: "\e011";
-$luccaIcons_edit: "\e012";
-$luccaIcons_edit-frame: "\e013";
-$luccaIcons_edit-mini: "\e014";
-$luccaIcons_ellipsis: "\e015";
-$luccaIcons_error: "\e016";
-$luccaIcons_files: "\e017";
-$luccaIcons_filter: "\e018";
-$luccaIcons_email: "\e019";
-$luccaIcons_add-user: "\e01a";
-$luccaIcons_help: "\e01b";
-$luccaIcons_list: "\e01c";
-$luccaIcons_lock: "\e01d";
-$luccaIcons_forbidden: "\e01e";
-$luccaIcons_minus: "\e01f";
-$luccaIcons_move: "\e020";
-$luccaIcons_move-horizontal: "\e021";
-$luccaIcons_move-vertical: "\e022";
-$luccaIcons_notification: "\e023";
-$luccaIcons_outside: "\e024";
-$luccaIcons_camera: "\e025";
-$luccaIcons_printer: "\e026";
-$luccaIcons_refresh: "\e027";
-$luccaIcons_remove-user: "\e028";
-$luccaIcons_drag: "\e029";
-$luccaIcons_search: "\e02a";
-$luccaIcons_send: "\e02b";
-$luccaIcons_to-user: "\e02c";
-$luccaIcons_settings: "\e02d";
-$luccaIcons_comment: "\e02e";
-$luccaIcons_timer: "\e02f";
-$luccaIcons_trash: "\e030";
-$luccaIcons_unlock: "\e031";
-$luccaIcons_upload: "\e032";
-$luccaIcons_user: "\e033";
-$luccaIcons_warning: "\e034";
-$luccaIcons_bank-card: "\e035";
-$luccaIcons_bookmark: "\e036";
-$luccaIcons_coins: "\e037";
-$luccaIcons_milestone: "\e038";
-$luccaIcons_quantity: "\e039";
-$luccaIcons_luggage: "\e03a";
-$luccaIcons_train: "\e03b";
-$luccaIcons_tools: "\e03c";
-$luccaIcons_toll-dollar: "\e03d";
-$luccaIcons_toll-euro: "\e03e";
-$luccaIcons_taxi: "\e03f";
-$luccaIcons_clean-car: "\e040";
-$luccaIcons_car: "\e041";
-$luccaIcons_postage: "\e042";
-$luccaIcons_iron: "\e043";
-$luccaIcons_plane: "\e044";
-$luccaIcons_piggy-bank: "\e045";
-$luccaIcons_phone: "\e046";
-$luccaIcons_parking: "\e047";
-$luccaIcons_computer-mouse: "\e048";
-$luccaIcons_subway: "\e049";
-$luccaIcons_meal: "\e04a";
-$luccaIcons_lunch: "\e04b";
-$luccaIcons_mileage: "\e04c";
-$luccaIcons_hotel: "\e04d";
-$luccaIcons_gasoline: "\e04e";
-$luccaIcons_euro: "\e04f";
-$luccaIcons_drink: "\e050";
-$luccaIcons_diner: "\e051";
-$luccaIcons_dollar: "\e052";
-$luccaIcons_computer: "\e053";
-$luccaIcons_bus: "\e054";
-$luccaIcons_breakfast: "\e055";
-$luccaIcons_arrow-west: "\e056";
-$luccaIcons_arrow-east: "\e057";
-$luccaIcons_arrow-north: "\e058";
-$luccaIcons_arrow-south: "\e059";
 
-@mixin luccaIcons_factory-base($letter) {
-    font-family: "{$luccaIcons_font-name}";
-    display: inline-block;
-    vertical-align: middle;
-    content: $letter;
-}
+/**
+ * Awesome Icon Maker Mixin
+ * @param iconName Name of the icon
+ * @param iconPosition Should icon be displayed on the left | right side ?
+ * --------------------------------------------------------------------------- */
 
-@mixin luccaIcons_make($iconName, $position) {
+ @mixin luccaIcons_make($iconName, $position) {
+	@each $name, $char in $luccaIcons_icons {
+		$class: str-replace($name, ' ', '.');
 
-    $letter: "luccaIcons_{$iconName}";
+		@if $name == $iconName {
 
-    @if $position == right {
-        &:after {
-            @include luccaIcons_factory-base(#{$letter});
-            margin-left: $luccaIcons_factory-margin;
-        }
-    } @else {
-        &:before {
-            @include luccaIcons_factory-base(#{$letter});
-            margin-right: $luccaIcons_factory-margin;
-        }
-    }
+			@if $position == right {
+				&:after {
+					font-family: $luccaIcons_font-name;
+					display: inline-block;
+					vertical-align: middle;
+					font-style: normal;
+
+					content: $char;
+					margin-left: $luccaIcons_factory-margin;
+				}
+			} @else {
+				&:before {
+					font-family: $luccaIcons_font-name;
+					display: inline-block;
+					vertical-align: middle;
+					font-style: normal;
+
+					content: $char;
+					margin-right: $luccaIcons_factory-margin;
+				}
+			}
+		}
+	}
 }

@@ -3,14 +3,14 @@
  * Load icon font
  * --------------------------------------------------------------------------- */
 @font-face {
-  font-family: "@{luccaIcons_font-name}";
-  src:  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.eot");
-  src:  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.eot?#iefix") format("embedded-opentype"),
-        url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.woff") format("woff"),
-        url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.ttf") format("truetype"),
-        url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.svg#lucca-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
+	font-family: "@{luccaIcons_font-name}";
+	src:  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.eot");
+	src:  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.eot?#iefix") format("embedded-opentype"),
+		  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.woff") format("woff"),
+		  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.ttf") format("truetype"),
+		  url("@{luccaIcons_font-path}/@{luccaIcons_font-name}.svg#lucca-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
 /**
@@ -18,301 +18,101 @@
  * --------------------------------------------------------------------------- */
 
 .luccaIcons_icon_base() {
-    font-family: "@{luccaIcons_font-name}";
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: none;
-    text-transform: none;
-    text-align: center;
-    font-size: @luccaIcons_font-size;
+	font-family: "@{luccaIcons_font-name}";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-transform: none;
+	text-align: center;
+	font-size: @luccaIcons_font-size;
 
-    speak: none;
-    font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+	speak: none;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 
-    &:before {
-        display: block;
-        margin-top: -1px;
-    }
+	&:before {
+		display: block;
+		margin-top: -1px;
+	}
 }
 
 i.@{luccaIcons_icon-class} {
-    .luccaIcons_icon_base();
-    display: inline-block;
-    vertical-align: middle;
+	.luccaIcons_icon_base();
+	display: inline-block;
+	vertical-align: middle;
 }
 
-// Icon classes
+/**
+ * Styles
+ * --------------------------------------------------------------------------- */
+
+// Circular
+// ====
+i.@{luccaIcons_icon-class}.circular {
+	width: @luccaIcons_circular-width; height: @luccaIcons_circular-height;
+	padding: @luccaIcons_circular-padding;
+
+	border-radius: 50%;
+}
+
+// Flipped
+// ====
+i.@{luccaIcons_icon-class}.flipped,
+i.@{luccaIcons_icon-class}.horizontally.flipped { transform: scale(-1, 1); }
+i.@{luccaIcons_icon-class}.vertically.flipped { transform: scale(1, -1); }
+
+// Rotated
+// ====
+i.@{luccaIcons_icon-class}.rotated,
+i.@{luccaIcons_icon-class}.rotated.clockwise { transform: rotate(90deg); }
+i.@{luccaIcons_icon-class}.rotated.counterclockwise { transform: rotate(-90deg); }
+
+
+/**
+ * Defines all icon classes
+ * --------------------------------------------------------------------------- */
+
+@icon-base-ruleset: {
+	font-family: @luccaIcons_font-name;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-transform: none;
+	text-align: center;
+
+	speak: none;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	display: inline-block;
+	vertical-align: middle;
+
+	// Font characters are poorly cropped...
+	&:before {
+		display: block;
+		margin-top: -1px;
+	}
+};
+
+@luccaIcons_attribute-name: replace(@luccaIcons_icon-class, '.', '-');
+i.@{luccaIcons_icon-class},
+[@{luccaIcons_attribute-name}] { @icon-base-ruleset(); }
+
+[@{luccaIcons_attribute-name}]:before { content: attr(replace('.', '-', @luccaIcons_icon-class)); }
+
+// Defines icon classes
 // =====
-.@{luccaIcons_icon-class}.pin:before {
-  content: "\e000";
-}
-.@{luccaIcons_icon-class}.plus:before {
-  content: "\e001";
-}
-.@{luccaIcons_icon-class}.analytics:before {
-  content: "\e002";
-}
-.@{luccaIcons_icon-class}.chevron.east:before {
-  content: "\e003";
-}
-.@{luccaIcons_icon-class}.chevron.north:before {
-  content: "\e004";
-}
-.@{luccaIcons_icon-class}.chevron.south:before {
-  content: "\e005";
-}
-.@{luccaIcons_icon-class}.chevron.west:before {
-  content: "\e006";
-}
-.@{luccaIcons_icon-class}.attachment:before {
-  content: "\e007";
-}
-.@{luccaIcons_icon-class}.blocks:before {
-  content: "\e008";
-}
-.@{luccaIcons_icon-class}.branch:before {
-  content: "\e009";
-}
-.@{luccaIcons_icon-class}.coffee:before {
-  content: "\e00a";
-}
-.@{luccaIcons_icon-class}.check:before {
-  content: "\e00b";
-}
-.@{luccaIcons_icon-class}.checkbox:before {
-  content: "\e00c";
-}
-.@{luccaIcons_icon-class}.checkbox.checked:before {
-  content: "\e00d";
-}
-.@{luccaIcons_icon-class}.clock:before {
-  content: "\e00e";
-}
-.@{luccaIcons_icon-class}.cross:before {
-  content: "\e00f";
-}
-.@{luccaIcons_icon-class}.calendar:before {
-  content: "\e010";
-}
-.@{luccaIcons_icon-class}.download:before {
-  content: "\e011";
-}
-.@{luccaIcons_icon-class}.edit:before {
-  content: "\e012";
-}
-.@{luccaIcons_icon-class}.edit.frame:before {
-  content: "\e013";
-}
-.@{luccaIcons_icon-class}.edit.mini:before {
-  content: "\e014";
-}
-.@{luccaIcons_icon-class}.ellipsis:before {
-  content: "\e015";
-}
-.@{luccaIcons_icon-class}.error:before {
-  content: "\e016";
-}
-.@{luccaIcons_icon-class}.files:before {
-  content: "\e017";
-}
-.@{luccaIcons_icon-class}.filter:before {
-  content: "\e018";
-}
-.@{luccaIcons_icon-class}.email:before {
-  content: "\e019";
-}
-.@{luccaIcons_icon-class}.add.user:before {
-  content: "\e01a";
-}
-.@{luccaIcons_icon-class}.help:before {
-  content: "\e01b";
-}
-.@{luccaIcons_icon-class}.list:before {
-  content: "\e01c";
-}
-.@{luccaIcons_icon-class}.lock:before {
-  content: "\e01d";
-}
-.@{luccaIcons_icon-class}.forbidden:before {
-  content: "\e01e";
-}
-.@{luccaIcons_icon-class}.minus:before {
-  content: "\e01f";
-}
-.@{luccaIcons_icon-class}.move:before {
-  content: "\e020";
-}
-.@{luccaIcons_icon-class}.move.horizontal:before {
-  content: "\e021";
-}
-.@{luccaIcons_icon-class}.move.vertical:before {
-  content: "\e022";
-}
-.@{luccaIcons_icon-class}.notification:before {
-  content: "\e023";
-}
-.@{luccaIcons_icon-class}.outside:before {
-  content: "\e024";
-}
-.@{luccaIcons_icon-class}.camera:before {
-  content: "\e025";
-}
-.@{luccaIcons_icon-class}.printer:before {
-  content: "\e026";
-}
-.@{luccaIcons_icon-class}.refresh:before {
-  content: "\e027";
-}
-.@{luccaIcons_icon-class}.remove.user:before {
-  content: "\e028";
-}
-.@{luccaIcons_icon-class}.drag:before {
-  content: "\e029";
-}
-.@{luccaIcons_icon-class}.search:before {
-  content: "\e02a";
-}
-.@{luccaIcons_icon-class}.send:before {
-  content: "\e02b";
-}
-.@{luccaIcons_icon-class}.to.user:before {
-  content: "\e02c";
-}
-.@{luccaIcons_icon-class}.settings:before {
-  content: "\e02d";
-}
-.@{luccaIcons_icon-class}.comment:before {
-  content: "\e02e";
-}
-.@{luccaIcons_icon-class}.timer:before {
-  content: "\e02f";
-}
-.@{luccaIcons_icon-class}.trash:before {
-  content: "\e030";
-}
-.@{luccaIcons_icon-class}.unlock:before {
-  content: "\e031";
-}
-.@{luccaIcons_icon-class}.upload:before {
-  content: "\e032";
-}
-.@{luccaIcons_icon-class}.user:before {
-  content: "\e033";
-}
-.@{luccaIcons_icon-class}.warning:before {
-  content: "\e034";
-}
-.@{luccaIcons_icon-class}.bank.card:before {
-  content: "\e035";
-}
-.@{luccaIcons_icon-class}.bookmark:before {
-  content: "\e036";
-}
-.@{luccaIcons_icon-class}.coins:before {
-  content: "\e037";
-}
-.@{luccaIcons_icon-class}.milestone:before {
-  content: "\e038";
-}
-.@{luccaIcons_icon-class}.quantity:before {
-  content: "\e039";
-}
-.@{luccaIcons_icon-class}.luggage:before {
-  content: "\e03a";
-}
-.@{luccaIcons_icon-class}.train:before {
-  content: "\e03b";
-}
-.@{luccaIcons_icon-class}.tools:before {
-  content: "\e03c";
-}
-.@{luccaIcons_icon-class}.toll.dollar:before {
-  content: "\e03d";
-}
-.@{luccaIcons_icon-class}.toll.euro:before {
-  content: "\e03e";
-}
-.@{luccaIcons_icon-class}.taxi:before {
-  content: "\e03f";
-}
-.@{luccaIcons_icon-class}.clean.car:before {
-  content: "\e040";
-}
-.@{luccaIcons_icon-class}.car:before {
-  content: "\e041";
-}
-.@{luccaIcons_icon-class}.postage:before {
-  content: "\e042";
-}
-.@{luccaIcons_icon-class}.iron:before {
-  content: "\e043";
-}
-.@{luccaIcons_icon-class}.plane:before {
-  content: "\e044";
-}
-.@{luccaIcons_icon-class}.piggy.bank:before {
-  content: "\e045";
-}
-.@{luccaIcons_icon-class}.phone:before {
-  content: "\e046";
-}
-.@{luccaIcons_icon-class}.parking:before {
-  content: "\e047";
-}
-.@{luccaIcons_icon-class}.computer.mouse:before {
-  content: "\e048";
-}
-.@{luccaIcons_icon-class}.subway:before {
-  content: "\e049";
-}
-.@{luccaIcons_icon-class}.meal:before {
-  content: "\e04a";
-}
-.@{luccaIcons_icon-class}.lunch:before {
-  content: "\e04b";
-}
-.@{luccaIcons_icon-class}.mileage:before {
-  content: "\e04c";
-}
-.@{luccaIcons_icon-class}.hotel:before {
-  content: "\e04d";
-}
-.@{luccaIcons_icon-class}.gasoline:before {
-  content: "\e04e";
-}
-.@{luccaIcons_icon-class}.euro:before {
-  content: "\e04f";
-}
-.@{luccaIcons_icon-class}.drink:before {
-  content: "\e050";
-}
-.@{luccaIcons_icon-class}.diner:before {
-  content: "\e051";
-}
-.@{luccaIcons_icon-class}.dollar:before {
-  content: "\e052";
-}
-.@{luccaIcons_icon-class}.computer:before {
-  content: "\e053";
-}
-.@{luccaIcons_icon-class}.bus:before {
-  content: "\e054";
-}
-.@{luccaIcons_icon-class}.breakfast:before {
-  content: "\e055";
-}
-.@{luccaIcons_icon-class}.arrow.west:before {
-  content: "\e056";
-}
-.@{luccaIcons_icon-class}.arrow.east:before {
-  content: "\e057";
-}
-.@{luccaIcons_icon-class}.arrow.north:before {
-  content: "\e058";
-}
-.@{luccaIcons_icon-class}.arrow.south:before {
-  content: "\e059";
-}
+.luccaIcons_define_icons(@index) when (@index > 0) {
+
+	@icon-class: replace(e(extract(extract(@luccaIcons_icons, @index), 1)), " ", ".");
+	@icon-char: extract(extract(@luccaIcons_icons, @index), 2);
+
+	.@{luccaIcons_icon-class}.@{icon-class}:before { content: @icon-char; }
+
+	.luccaIcons_define_icons((@index - 1));
+}
+.luccaIcons_define_icons(length(@luccaIcons_icons));
