@@ -45,17 +45,10 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        },
-        concurrent: {
-            options: {
-                logConcurrentOutput: true
-            },
-            dev: ['watch:less', 'watch:sass']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-less'); // loads less compiler
     grunt.loadNpmTasks('grunt-contrib-sass'); // loads sass compiler
     grunt.loadNpmTasks('grunt-contrib-watch'); // loads watch contrib
-    grunt.loadNpmTasks('grunt-concurrent'); // loads concurrent runner
-    grunt.registerTask('default', ['concurrent']);
+    grunt.registerTask('default', ['watch']);
 };

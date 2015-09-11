@@ -1,7 +1,7 @@
 {
   "name": "lucca-icons",
   "version": "1.0.0",
-  "homepage": "https://github.com/LuccaSA/lucca-icons",
+  "homepage": "https://lucccsa.github.io/lucca-icons",
   "authors": [
     "Léa Mendes <lmendes@lucca.fr>",
     "Clotilde Martin-Lemerle <clot@lucca.fr>",
@@ -9,15 +9,20 @@
     "benoit Paugam <bpaugam@lucca.fr>"
   ],
   "description": "Lucca icons",
-  "main": "src/lucca-icons.less",
+  "main": ["src/lucca-icons.less","src/lucca-icons.scss"],
   "keywords": [
     "lucca",
-    "less"
+    "icons",
+    "less",
+    "sass"
   ],
   "license": "MIT",
   "ignore": [
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "**/.*",
+    "test",
+    "tests"
   ],
   "repository": {
     "type": "git",
