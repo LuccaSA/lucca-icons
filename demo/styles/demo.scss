@@ -3,7 +3,7 @@ $luccaIcons_font-path: '../../font';
 @import "../../src/lucca-icons";
 
 .mixin.demo {
-	@include luccaIcons_make("arrow north", position);
+	@include luccaIcons_make("breakfast", left);
 }
 
 .icon-list {
