@@ -17,32 +17,25 @@
  * Icons
  * --------------------------------------------------------------------------- */
 
-.luccaIcons_icon_base() {
-	font-family: "@{luccaIcons_font-name}";
+i.@{luccaIcons_icon-class},
+[@{luccaIcons_attribute-name}] {
+	font-family: @luccaIcons_font-name;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-decoration: none;
 	text-transform: none;
 	text-align: center;
-	font-size: @luccaIcons_font-size;
 
 	speak: none;
 	font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-
-	&:before {
-		display: block;
-		margin-top: -1px;
-	}
+	&:before { display: block; margin-top: -1px; }
 }
+i.@{luccaIcons_icon-class} { display: inline-block; vertical-align: middle; }
+[@{luccaIcons_attribute-name}]:before { content: attr(@luccaIcons_attribute-name); }
 
-i.@{luccaIcons_icon-class} {
-	.luccaIcons_icon_base();
-	display: inline-block;
-	vertical-align: middle;
-}
 
 /**
  * Styles
@@ -73,36 +66,6 @@ i.@{luccaIcons_icon-class}.rotated.counterclockwise { transform: rotate(-90deg);
 /**
  * Defines all icon classes
  * --------------------------------------------------------------------------- */
-
-@icon-base-ruleset: {
-	font-family: @luccaIcons_font-name;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-decoration: none;
-	text-transform: none;
-	text-align: center;
-
-	speak: none;
-	font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-
-	display: inline-block;
-	vertical-align: middle;
-
-	// Font characters are poorly cropped...
-	&:before {
-		display: block;
-		margin-top: -1px;
-	}
-};
-
-@luccaIcons_attribute-name: replace(@luccaIcons_icon-class, '.', '-');
-i.@{luccaIcons_icon-class},
-[@{luccaIcons_attribute-name}] { @icon-base-ruleset(); }
-
-[@{luccaIcons_attribute-name}]:before { content: attr(replace('.', '-', @luccaIcons_icon-class)); }
 
 // Defines icon classes
 // =====
