@@ -12,6 +12,11 @@ $luccaIcons_icon-class: 'lui.icon' !default;
 // Mixin icons default margin
 $luccaIcons_factory-margin: 0.5em !default;
 
+// Circular style
+$luccaIcons_circular-width: 2em;
+$luccaIcons_circular-height: 2em;
+$luccaIcons_circular-padding: 0.5em;
+
 $luccaIcons_icons: (
 	"breakfast": "\e000",
 	"gallery": "\e001",
@@ -56,7 +61,7 @@ $luccaIcons_icons: (
 	"drag": "\e029",
 	"search": "\e02a",
 	"send": "\e02b",
-	"send to user": "\e02c",
+	"to user": "\e02c",
 	"settings": "\e02d",
 	"comment": "\e02e",
 	"timer": "\e02f",
@@ -101,7 +106,7 @@ $luccaIcons_icons: (
 	"south arrow": "\e056",
 	"pin": "\e057",
 	"analytics": "\e058",
-	"chevron east": "\e059",
+	"east chevron": "\e059",
 	"location": "\e05a",
 	"tiles": "\e05d",
 	"truck": "\e05e",

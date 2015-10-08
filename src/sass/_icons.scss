@@ -53,9 +53,35 @@ i.#{$luccaIcons_icon-class} {
 	vertical-align: middle;
 }
 
+/**
+ * Styles
+ * --------------------------------------------------------------------------- */
+
+// Circular
+// ====
+i.#{$luccaIcons_icon-class}.circular {
+	width: $luccaIcons_circular-width; height: $luccaIcons_circular-height;
+	padding: $luccaIcons_circular-padding;
+
+	border-radius: 50%;
+}
+
+// Flipped
+// ====
+i.#{$luccaIcons_icon-class}.flipped,
+i.#{$luccaIcons_icon-class}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
+i.#{$luccaIcons_icon-class}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
+
+// Rotated
+// ====
+i.#{$luccaIcons_icon-class}.rotated,
+i.#{$luccaIcons_icon-class}.rotated[class*="clockwise rotated"] { transform: rotate(90deg); }
+i.#{$luccaIcons_icon-class}.rotated[class*="counterclockwise rotated"] { transform: rotate(-90deg); }
+
+
 // Defines icon classes
 // =====
 @each $name, $char in $luccaIcons_icons {
 	$class: str-replace($name, ' ', '.');
-	.#{$luccaIcons_icon-class}.#{$class}:before { content: $char; }
+	.#{$luccaIcons_icon-class}.#{$class}[class*="#{$name}"]:before { content: $char; }
 }

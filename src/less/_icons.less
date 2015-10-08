@@ -53,14 +53,14 @@ i.@{luccaIcons_icon-class}.circular {
 // Flipped
 // ====
 i.@{luccaIcons_icon-class}.flipped,
-i.@{luccaIcons_icon-class}.horizontally.flipped { transform: scale(-1, 1); }
-i.@{luccaIcons_icon-class}.vertically.flipped { transform: scale(1, -1); }
+i.@{luccaIcons_icon-class}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
+i.@{luccaIcons_icon-class}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
 
 // Rotated
 // ====
 i.@{luccaIcons_icon-class}.rotated,
-i.@{luccaIcons_icon-class}.rotated.clockwise { transform: rotate(90deg); }
-i.@{luccaIcons_icon-class}.rotated.counterclockwise { transform: rotate(-90deg); }
+i.@{luccaIcons_icon-class}.rotated[class*="clockwise flipped"] { transform: rotate(90deg); }
+i.@{luccaIcons_icon-class}.rotated[class*="counterclockwise flipped"]  { transform: rotate(-90deg); }
 
 
 /**
@@ -69,13 +69,14 @@ i.@{luccaIcons_icon-class}.rotated.counterclockwise { transform: rotate(-90deg);
 
 // Defines icon classes
 // =====
-.luccaIcons_define_icons(@index) when (@index > 0) {
+.luccaIcons_define_icons(@index) when (@index <= length(@luccaIcons_icons)) {
 
-	@icon-class: replace(e(extract(extract(@luccaIcons_icons, @index), 1)), " ", ".");
+	@icon-class: extract(extract(@luccaIcons_icons, @index), 1);
+	@icon-classes: replace(e(extract(extract(@luccaIcons_icons, @index), 1)), " ", ".");
 	@icon-char: extract(extract(@luccaIcons_icons, @index), 2);
 
-	.@{luccaIcons_icon-class}.@{icon-class}:before { content: @icon-char; }
+	.@{luccaIcons_icon-class}.@{icon-classes}[class*="@{icon-class}"]:before { content: @icon-char; }
 
-	.luccaIcons_define_icons((@index - 1));
+	.luccaIcons_define_icons((@index + 1));
 }
-.luccaIcons_define_icons(length(@luccaIcons_icons));
+.luccaIcons_define_icons(1);
