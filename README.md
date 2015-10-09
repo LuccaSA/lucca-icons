@@ -21,5 +21,6 @@ By default the fonts will be imported from //cdn.lucca.fr/lucca-icons/fonts/lucc
 
 ```less
 @import "bower_components/lucca-icons/src/lucca-icons";
-@luccaIcons_font-path: '/my/path/to/fonts'; // will try to get fonts from '/my/path/to/fonts/lucca-icons.(woff,eot,ttf)'
+@luccaIcons_font-path: '/my/path/to/fonts'; 
+// will try to get fonts from '/my/path/to/fonts/lucca-icons.(woff,eot,ttf)'
 ```
