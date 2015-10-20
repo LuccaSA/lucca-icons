@@ -11,16 +11,19 @@
 /**
  * Load icon font
  * --------------------------------------------------------------------------- */
-@font-face {
-  font-family: "#{$luccaIcons_font-name}";
-  src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot");
-  src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot?#iefix") format("embedded-opentype"),
-        url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.woff") format("woff"),
-        url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.ttf") format("truetype"),
-        url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.svg#lucca-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
+@at-root {
+	@font-face {
+		font-family: "#{$luccaIcons_font-name}";
+		src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot");
+		src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot?#iefix") format("embedded-opentype"),
+			  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.woff") format("woff"),
+			  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.ttf") format("truetype"),
+			  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.svg#lucca-icons") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
 }
+
 
 /**
  * Icons
