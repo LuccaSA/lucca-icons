@@ -13,7 +13,7 @@
  * --------------------------------------------------------------------------- */
 @at-root {
 	@font-face {
-		font-family: "#{$luccaIcons_font-name}";
+		font-family: "#{$luccaIcons_font-family}";
 		src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot");
 		src:  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.eot?#iefix") format("embedded-opentype"),
 			  url("#{$luccaIcons_font-path}/#{$luccaIcons_font-name}.woff") format("woff"),
@@ -30,7 +30,7 @@
  * --------------------------------------------------------------------------- */
 
 @mixin luccaIcons_icon_base() {
-	font-family: "#{$luccaIcons_font-name}";
+	font-family: "#{$luccaIcons_font-family}";
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
