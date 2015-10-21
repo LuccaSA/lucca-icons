@@ -8,9 +8,9 @@
 	@return $string;
 }
 
-/**
- * Load icon font
- * --------------------------------------------------------------------------- */
+// load icon font
+// ===================================
+
 @at-root {
 	@font-face {
 		font-family: "#{$luccaIcons_font-family}";
@@ -25,9 +25,8 @@
 }
 
 
-/**
- * Icons
- * --------------------------------------------------------------------------- */
+// Define icons
+// ===================================
 
 @mixin luccaIcons_icon_base() {
 	font-family: "#{$luccaIcons_font-family}";
@@ -50,19 +49,17 @@
 	}
 }
 
-i.#{$luccaIcons_icon-class} {
+i#{$luccaIcons_icon-base-selector} {
 	@include luccaIcons_icon_base();
 	display: inline-block;
 	vertical-align: middle;
 }
 
-/**
- * Styles
- * --------------------------------------------------------------------------- */
+// Icon styles
+// ===================================
 
 // Circular
-// ====
-i.#{$luccaIcons_icon-class}.circular {
+i#{$luccaIcons_icon-base-selector}.circular {
 	width: $luccaIcons_circular-width; height: $luccaIcons_circular-height;
 	padding: $luccaIcons_circular-padding;
 
@@ -70,21 +67,18 @@ i.#{$luccaIcons_icon-class}.circular {
 }
 
 // Flipped
-// ====
-i.#{$luccaIcons_icon-class}.flipped,
-i.#{$luccaIcons_icon-class}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
-i.#{$luccaIcons_icon-class}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
+i#{$luccaIcons_icon-base-selector}.flipped,
+i#{$luccaIcons_icon-base-selector}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
+i#{$luccaIcons_icon-base-selector}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
 
 // Rotated
-// ====
-i.#{$luccaIcons_icon-class}.rotated,
-i.#{$luccaIcons_icon-class}.rotated[class*="clockwise rotated"] { transform: rotate(90deg); }
-i.#{$luccaIcons_icon-class}.rotated[class*="counterclockwise rotated"] { transform: rotate(-90deg); }
+i#{$luccaIcons_icon-base-selector}.rotated,
+i#{$luccaIcons_icon-base-selector}.rotated[class*="clockwise rotated"] { transform: rotate(90deg); }
+i#{$luccaIcons_icon-base-selector}.rotated[class*="counterclockwise rotated"] { transform: rotate(-90deg); }
 
 
 // Defines icon classes
-// =====
 @each $name, $char in $luccaIcons_icons {
 	$class: str-replace($name, ' ', '.');
-	.#{$luccaIcons_icon-class}.#{$class}[class*="#{$name}"]:before { content: $char; }
+	i#{$luccaIcons_icon-base-selector}.#{$class}[class*="#{$name}"]:before { content: $char; }
 }

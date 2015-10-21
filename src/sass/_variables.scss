@@ -8,7 +8,7 @@ $luccaIcons_font-path: '//cdn.lucca.fr/lucca-icons/1.1.x/font' !default;
 $luccaIcons_font-size: 1em !default;
 
 // Class to be added to the icon elements
-$luccaIcons_icon-class: 'lui.icon' !default;
+$luccaIcons_icon-base-selector: '.lui.icon' !default;
 
 // Mixin icons default margin
 $luccaIcons_factory-margin: 0.5em !default;

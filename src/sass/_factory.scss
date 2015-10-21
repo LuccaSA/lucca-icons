@@ -1,11 +1,8 @@
 
-/**
- * Awesome Icon Maker Mixin
- * @param iconName Name of the icon
- * @param iconPosition Should icon be displayed on the left | right side ?
- * --------------------------------------------------------------------------- */
+// Awesome Icon Maker Mixin
+// ===================================
 
- @mixin luccaIcons_make($iconName, $position) {
+@mixin luccaIcons_make($iconName, $position) {
 	@each $name, $char in $luccaIcons_icons {
 		$class: str-replace($name, ' ', '.');
 
