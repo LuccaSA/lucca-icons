@@ -28,7 +28,7 @@
 // Define icons
 // ===================================
 
-@mixin luccaIcons_icon_base() {
+%luccaIcons_icon_base {
 	font-family: "#{$luccaIcons_font-family}";
 	font-style: normal;
 	font-weight: normal;
@@ -50,7 +50,7 @@
 }
 
 i#{$luccaIcons_icon-base-selector} {
-	@include luccaIcons_icon_base();
+	@extend %luccaIcons_icon_base;
 	display: inline-block;
 	vertical-align: middle;
 }
