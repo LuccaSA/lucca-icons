@@ -2,7 +2,7 @@
 // Name and path of font files
 $luccaIcons_font-name: 'lucca-icons' !default;
 $luccaIcons_font-family: 'lucca-icons' !default;
-$luccaIcons_font-path: '//cdn.lucca.fr/lucca-icons/1.1.x/font' !default;
+$luccaIcons_font-path: '//cdn.lucca.fr/lucca-icons/font' !default;
 
 // Default font sizing
 $luccaIcons_font-size: 1em !default;
@@ -30,8 +30,11 @@ $luccaIcons_icons: (
 	"branch": "\e009",
 	"coffee": "\e00a",
 	"check": "\e00b",
+
 	"checkbox": "\e00c",
 	"checkbox checked": "\e00d",
+	"checkbox partial": "\e064",
+
 	"clock": "\e00e",
 	"cross": "\e00f",
 	"calendar": "\e010",
