@@ -80,5 +80,5 @@ i#{$luccaIcons_icon-base-selector}.rotated[class*="counterclockwise rotated"] { 
 // Defines icon classes
 @each $name, $char in $luccaIcons_icons {
 	$class: str-replace($name, ' ', '.');
-	i#{$luccaIcons_icon-base-selector}.#{$class}[class*="#{$name}"]:before { content: $char; }
+	#{$luccaIcons_icon-base-selector}.#{$class}[class*="#{$name}"]:before { content: $char; }
 }
