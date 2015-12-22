@@ -1,6 +1,6 @@
 # lucca-icons
 Icon font by Lucca
-[demo page](http://luccaSA.github.io/lucca-ui/icons.html)
+[demo page](http://luccasa.github.io/lucca-ui/#/icons)
 
 
 ## How to install
