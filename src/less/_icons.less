@@ -17,66 +17,68 @@
  * Icons
  * --------------------------------------------------------------------------- */
 
-i.@{luccaIcons_icon-class},
-[@{luccaIcons_attribute-name}] {
-	font-family: @luccaIcons_font-name;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-decoration: none;
-	text-transform: none;
-	text-align: center;
+& when (@createClasses) {
+	i.@{luccaIcons_icon-class},
+	[@{luccaIcons_attribute-name}] {
+		font-family: @luccaIcons_font-name;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-decoration: none;
+		text-transform: none;
+		text-align: center;
 
-	speak: none;
-	font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	&:before { display: block; margin-top: -1px; }
+		speak: none;
+		font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		&:before { display: block; margin-top: -1px; }
+	}
+	i.@{luccaIcons_icon-class} { display: inline-block; vertical-align: middle; }
+	[@{luccaIcons_attribute-name}]:before { content: attr(@luccaIcons_attribute-name); }
+
+
+	/**
+	 * Styles
+	 * --------------------------------------------------------------------------- */
+
+	// Circular
+	// ====
+	i.@{luccaIcons_icon-class}.circular {
+		width: @luccaIcons_circular-width; height: @luccaIcons_circular-height;
+		padding: @luccaIcons_circular-padding;
+
+		border-radius: 50%;
+	}
+
+	// Flipped
+	// ====
+	i.@{luccaIcons_icon-class}.flipped,
+	i.@{luccaIcons_icon-class}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
+	i.@{luccaIcons_icon-class}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
+
+	// Rotated
+	// ====
+	i.@{luccaIcons_icon-class}.rotated,
+	i.@{luccaIcons_icon-class}.rotated[class*="clockwise flipped"] { transform: rotate(90deg); }
+	i.@{luccaIcons_icon-class}.rotated[class*="counterclockwise flipped"]  { transform: rotate(-90deg); }
+
+
+	/**
+	 * Defines all icon classes
+	 * --------------------------------------------------------------------------- */
+
+	// Defines icon classes
+	// =====
+	.luccaIcons_define_icons(@index) when (@index <= length(@luccaIcons_icons)) {
+
+		@icon-class: extract(extract(@luccaIcons_icons, @index), 1);
+		@icon-classes: replace(e(extract(extract(@luccaIcons_icons, @index), 1)), " ", ".");
+		@icon-char: extract(extract(@luccaIcons_icons, @index), 2);
+
+		.@{luccaIcons_icon-class}.@{icon-classes}[class*="@{icon-class}"]:before { content: @icon-char; }
+
+		.luccaIcons_define_icons((@index + 1));
+	}
+	.luccaIcons_define_icons(1);
 }
-i.@{luccaIcons_icon-class} { display: inline-block; vertical-align: middle; }
-[@{luccaIcons_attribute-name}]:before { content: attr(@luccaIcons_attribute-name); }
-
-
-/**
- * Styles
- * --------------------------------------------------------------------------- */
-
-// Circular
-// ====
-i.@{luccaIcons_icon-class}.circular {
-	width: @luccaIcons_circular-width; height: @luccaIcons_circular-height;
-	padding: @luccaIcons_circular-padding;
-
-	border-radius: 50%;
-}
-
-// Flipped
-// ====
-i.@{luccaIcons_icon-class}.flipped,
-i.@{luccaIcons_icon-class}.flipped[class*="horizontally flipped"] { transform: scale(-1, 1); }
-i.@{luccaIcons_icon-class}.flipped[class*="vertically flipped"] { transform: scale(1, -1); }
-
-// Rotated
-// ====
-i.@{luccaIcons_icon-class}.rotated,
-i.@{luccaIcons_icon-class}.rotated[class*="clockwise flipped"] { transform: rotate(90deg); }
-i.@{luccaIcons_icon-class}.rotated[class*="counterclockwise flipped"]  { transform: rotate(-90deg); }
-
-
-/**
- * Defines all icon classes
- * --------------------------------------------------------------------------- */
-
-// Defines icon classes
-// =====
-.luccaIcons_define_icons(@index) when (@index <= length(@luccaIcons_icons)) {
-
-	@icon-class: extract(extract(@luccaIcons_icons, @index), 1);
-	@icon-classes: replace(e(extract(extract(@luccaIcons_icons, @index), 1)), " ", ".");
-	@icon-char: extract(extract(@luccaIcons_icons, @index), 2);
-
-	.@{luccaIcons_icon-class}.@{icon-classes}[class*="@{icon-class}"]:before { content: @icon-char; }
-
-	.luccaIcons_define_icons((@index + 1));
-}
-.luccaIcons_define_icons(1);
