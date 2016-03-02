@@ -50,7 +50,7 @@
 }
 
 
-@if ($createClasses) {
+@if ($luccaIcons_font-create-classes) {
 	i#{$luccaIcons_icon-base-selector} {
 		@extend %luccaIcons_icon_base;
 		display: inline-block;
