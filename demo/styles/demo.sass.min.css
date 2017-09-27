@@ -491,6 +491,39 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
 .lui.icon.planning-manager[class*="planning-manager"]:before {
   content: ""; }
 
+.lui.icon.format-bold[class*="format-bold"]:before {
+  content: ""; }
+
+.lui.icon.format-clear[class*="format-clear"]:before {
+  content: ""; }
+
+.lui.icon.format-italic[class*="format-italic"]:before {
+  content: ""; }
+
+.lui.icon.format-link[class*="format-link"]:before {
+  content: ""; }
+
+.lui.icon.format-list[class*="format-list"]:before {
+  content: ""; }
+
+.lui.icon.format-list-nb[class*="format-list-nb"]:before {
+  content: ""; }
+
+.lui.icon.format-redo[class*="format-redo"]:before {
+  content: "󠥬"; }
+
+.lui.icon.format-underlined[class*="format-underlined"]:before {
+  content: "󠥭"; }
+
+.lui.icon.format-undo[class*="format-undo"]:before {
+  content: "󠥮"; }
+
+.lui.icon.dossier-rh[class*="dossier-rh"]:before {
+  content: "󠥯"; }
+
+.lui.icon.telephone[class*="telephone"]:before {
+  content: ""; }
+
 .mixin.demo:before {
   font-family: "lucca-icons";
   display: inline-block;
