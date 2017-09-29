@@ -510,16 +510,16 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
   content: ""; }
 
 .lui.icon.format-redo[class*="format-redo"]:before {
-  content: "󠥬"; }
+  content: ""; }
 
 .lui.icon.format-underlined[class*="format-underlined"]:before {
-  content: "󠥭"; }
+  content: ""; }
 
 .lui.icon.format-undo[class*="format-undo"]:before {
-  content: "󠥮"; }
+  content: ""; }
 
 .lui.icon.dossier-rh[class*="dossier-rh"]:before {
-  content: "󠥯"; }
+  content: ""; }
 
 .lui.icon.telephone[class*="telephone"]:before {
   content: ""; }
