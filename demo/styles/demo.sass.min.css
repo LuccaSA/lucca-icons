@@ -524,6 +524,15 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
 .lui.icon.telephone[class*="telephone"]:before {
   content: ""; }
 
+.lui.icon.certif-error[class*="certif-error"]:before {
+  content: ""; }
+
+.lui.icon.certif-valid[class*="certif-valid"]:before {
+  content: ""; }
+
+.lui.icon.certif-waiting[class*="certif-waiting"]:before {
+  content: ""; }
+
 .mixin.demo:before {
   font-family: "lucca-icons";
   display: inline-block;
