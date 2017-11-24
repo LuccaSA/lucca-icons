@@ -533,6 +533,9 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
 .lui.icon.certif-waiting[class*="certif-waiting"]:before {
   content: ""; }
 
+.lui.icon.face[class*="face"]:before {
+  content: ""; }
+
 .mixin.demo:before {
   font-family: "lucca-icons";
   display: inline-block;
