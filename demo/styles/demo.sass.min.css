@@ -536,6 +536,24 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
 .lui.icon.face[class*="face"]:before {
   content: ""; }
 
+.lui.icon.update[class*="update"]:before {
+  content: ""; }
+
+.lui.icon.book[class*="book"]:before {
+  content: ""; }
+
+.lui.icon.bow[class*="bow"]:before {
+  content: ""; }
+
+.lui.icon.compas[class*="compas"]:before {
+  content: ""; }
+
+.lui.icon.dashboard[class*="dashboard"]:before {
+  content: ""; }
+
+.lui.icon.dialog[class*="dialog"]:before {
+  content: ""; }
+
 .mixin.demo:before {
   font-family: "lucca-icons";
   display: inline-block;
