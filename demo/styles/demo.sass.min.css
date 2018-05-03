@@ -554,6 +554,15 @@ i.lui.icon.rotated[class*="counterclockwise rotated"] {
 .lui.icon.dialog[class*="dialog"]:before {
   content: ""; }
 
+.lui.icon.light-bulb[class*="light-bulb"]:before {
+  content: ""; }
+
+.lui.icon.toll[class*="toll"]:before {
+  content: ""; }
+
+.lui.icon.rotate[class*="rotate"]:before {
+  content: ""; }
+
 .mixin.demo:before {
   font-family: "lucca-icons";
   display: inline-block;
